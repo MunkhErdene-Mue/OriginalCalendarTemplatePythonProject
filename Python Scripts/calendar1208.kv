@@ -1,0 +1,362 @@
+WindowManager:
+    StartWindow:
+    MonthNumWindow:
+    StartMonthWindow:
+    addTemplate:
+    PreviewWindow:
+    DrawingFile:
+
+<StartWindow>:
+    name:"startW"
+    FloatLayout:
+    
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'startBackground1.jpg'
+
+        Button:     
+            size_hint: 0.6, 0.4
+            pos_hint: {"x":0.2, "top":0.7}
+            font_size:100
+            text:"カレンダー"
+            color:(1, 0.4247, 0, 1)
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            on_release:
+                app.root.current="monthN"
+                root.manager.transition.direction="left"
+
+<MonthNumWindow>:
+    name:"monthN"
+   
+    FloatLayout:
+    
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bacgroundDesign2.jpg'
+        MDRaisedButton:
+            id:menu_
+            text: "何ヶ月にしますか"
+            color:(1, 0.4247, 0, 1)
+            size_hint:0.3, 0.15
+            font_size: 40
+            background_color: [0,0,1,1]
+            pos_hint:{"center_x":.5, "center_y":.5}
+            on_release: root.drpdown_()
+
+        Button:
+            text: "次"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.85, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]       
+            on_release:
+                app.root.current="startmonthW"
+                root.manager.transition.direction="left"
+<StartMonthWindow>:
+    name: "startmonthW"
+
+    MDFloatLayout:
+        orientation: "vertical"
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bacgroundDesign2.jpg'
+
+        MDRaisedButton:
+            id: calBtn
+            text:"何年・何月から始めますか"
+            size_hint:0.3, 0.15
+            font_size: 40
+            pos_hint:{"center_x":.5, "center_y":.5}
+            on_release: root.show_date_picker()
+        Button:
+            text: "前"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.05, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]   
+            on_release:
+                app.root.current="monthN"
+                root.manager.transition.direction="right"
+            
+        Button:
+            text: "次"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.85, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]            
+            on_release:
+                
+                app.root.current="addT"
+                root.manager.transition.direction="left"
+                
+<addTemplate>:
+    name: "addT"
+        
+    FloatLayout:
+        padding:5
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bacgroundDesign1.jpg'
+                Color:
+                    rgba: 0.015, 0.34, 0.29, 1
+                RoundedRectangle:
+                    size: self.size/2
+                    pos: self.pos/2
+                    radius: [80]         
+
+        GridLayout:
+            cols: 3
+            padding: '50sp'
+            pos_hint:{"center_x":.5, "center_y":.5}
+            spacing: 30
+            size_hint: 1, 0.85
+            Button:
+                id: btn1
+                size_hint: 0.8, 0.7
+                background_color: (0.0, 0.0, 0.5, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\A4-base.png'
+                on_release:
+                    app.root.current="prevW"
+                    root.state=1
+                    root.btn1()
+                    root.manager.transition.direction="left"
+            
+            Button:
+                id: btn2
+                size_hint: 0.9, 0.7
+                background_color: (0.0, 0.0, 0.0, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\animal2-3month.png'
+                on_release:
+                    app.root.current="prevW"
+                    root.manager.transition.direction="left"
+                    root.state=2
+                    root.btn1()
+            Button:
+                id: btn3
+                size_hint: 0.9, 0.7
+                background_color: (0.0, 0.0, 0.0, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\bird-6month.png'
+                on_release:
+                    app.root.current="prevW"
+                    root.manager.transition.direction="left"
+                    root.state=3
+                    root.btn1()
+
+            Button:
+                id: btn4
+                size_hint: 0.9, 0.7
+                background_color: (0.0, 0.0, 0.0, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\flower-3month.png'
+                on_release:
+                    app.root.current="prevW"
+                    root.manager.transition.direction="left"
+                    root.state=4
+                    root.btn1()
+
+            Button:
+                id: btn5
+                size_hint: 0.9, 0.7
+                background_color: (0.0, 0.0, 0.0, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\pag-6month1.png'
+                on_release:
+                    app.root.current="prevW"
+                    root.manager.transition.direction="left"
+                    root.state=5
+                    root.btn1()
+
+            Button:
+                id: btn6
+                size_hint: 0.9, 0.7
+                background_color: (0.0, 0.0, 0.0, 0.0)
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: '.\\base\\state6.png'
+                on_release:
+                    
+                    root.state=6
+                    root.manager.transition.direction="left"
+                    app.root.current="prevW"
+                    root.btn1()
+                    
+
+                    
+
+          
+    
+        Button:
+            text: "前"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.05, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]   
+            on_release:
+                app.root.current="startmonthW"
+                root.manager.transition.direction="right"
+
+
+
+<PreviewWindow>:
+    name: "prevW"
+    
+    on_enter:
+        root.settei_of_month()
+    FloatLayout:
+        padding:5
+        
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bacgroundDesign1.jpg'
+                Color:
+                    rgba: 0.015, 0.34, 0.29, 1
+                RoundedRectangle:
+                    size: self.size/2
+                    pos: self.pos/2
+                    radius: [80] 
+        BoxLayout:
+            orientation: 'vertical'
+            Image:
+                id: preview_image
+                source: ''
+                size_hint_x: 0.3
+                #allow_stretch: True
+                pos_hint:{"center_x":.5, "center_y":.65}
+
+
+            Label:
+                text: "これで決定しますか？"
+                size_hint: 0.2, 0.1
+                pos_hint:{"center_x":.5, "center_y":.3}
+                font_size: 30
+                color:(1, 0.4247, 0, 1)
+
+        Button:
+            text: "前"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.05, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]   
+            on_release:
+                app.root.current="addT"
+                root.manager.transition.direction="right"
+        Button:
+            text: "次"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.85, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]       
+            on_release:
+                app.root.current="dFile"
+                root.manager.transition.direction="right"
+
+<DrawingFile>:
+    name: "dFile"
+    
+    
+    FloatLayout:
+        padding:5
+        
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'bacgroundDesign1.jpg'
+                Color:
+                    rgba: 0.015, 0.34, 0.29, 1
+                RoundedRectangle:
+                    size: self.size/2
+                    pos: self.pos/2
+                    radius: [80] 
+        Button:
+            text: "次"
+            size_hint: 0.07, 0.07
+            pos_hint: {"x":0.85, "top":0.2}
+            font_size: 20
+            background_color: (0.0, 0.0, 0.0, 0.0)
+            canvas.before:
+                Color:
+                    rgba: 37/255, 71/255, 71/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [80]       
+            on_release:
+                app.root.current="startW"
+                root.manager.transition.direction="right"
+   
+
+        
+
