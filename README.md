@@ -22,27 +22,27 @@ This Python project generates a customizable calendar template based on user pre
 
 <p align="center">
 Run the source code in a virtual anaconda environment: <br/>
-<img src="start.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/start.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Select number of months:  <br/>
-<img src="Select1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/Select1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Select start year and month: <br/>
-<img src="Select2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/Select2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Select a template: <br/>
-<img src="Select3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/Select3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Confirm your selection:  <br/>
-<img src="Confirm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/confirm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 There is a Template:  <br/>
-<img src="result.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="/Python Scripts/pictures/result.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
