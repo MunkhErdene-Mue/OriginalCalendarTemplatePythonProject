@@ -1,4 +1,3 @@
-# OriginalCalendarTemplatePythonProject
 <h1>Original Calendar Template</h1>
 
  ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
